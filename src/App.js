@@ -1,11 +1,9 @@
 import React, { Component } from 'react';
+
+import routes from './routes'
 import './App.css';
-import BlogList from './pages/BlogList'
 import Header from './components/Header'
 import Footer from './components/Footer'
-import ArticleItem from './pages/ArticleItem'
-import ToDoWithRedux from './components/ToDoListWithRedux'
-import NotFound from './pages/404'
 import { Route, Switch } from 'react-router-dom';
 
 class App extends Component {
@@ -15,12 +13,18 @@ class App extends Component {
                 <Header/>
                 <div>
                     <Switch>
-                        <Route exact path="/" component={BlogList} />
-                        <Route path="/toDo" component={ToDoWithRedux} />
-                        <Route path="/toDoWithRedux" component={ToDoWithRedux} />
-                        <Route path="/article/create" component={ToDoWithRedux} />
-                        <Route path="/article/:id" component={ArticleItem} />
-                        <Route path="*" component={NotFound} />
+                        {
+                            routes.map((item, index) => {
+                                return (
+                                    <Route
+                                    key={index}
+                                    exact={item.exact}
+                                    path={item.path}
+                                    component={item.component}
+                                    />
+                                )
+                            })
+                        }
                     </Switch>
                 </div>
                 <Footer/>

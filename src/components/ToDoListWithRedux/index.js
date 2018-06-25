@@ -1,11 +1,26 @@
-import React, {Component} from 'react'
+import React, { Component } from 'react'
 import {connect} from 'react-redux'
 
 import List from './components/List'
+import ModalWindow from '../ModalWindow'
+
 
 class ToDoListWithRedux extends Component {
     state = {
-        value: ''
+        value: '',
+        modalVisible: true
+    }
+    componentWillReceiveProps (nextProps) {
+        if (nextProps.toDo.length > 3) {
+            this.setState({modalVisible: true})
+        }
+    }
+    componentDidMount () {
+        this.elem.addEventListener('keypress', (e) => {
+            if (e.keyCode === 13) {
+                this.handleClickBtn()
+            }
+        })
     }
     handleClickBtn = () => {
         if (this.state.value) {
@@ -24,6 +39,7 @@ class ToDoListWithRedux extends Component {
                     type="text"
                     onChange={this.handleChangeValue}
                     value={value}
+                    ref={elem => {this.elem = elem}}
                 />
                 <button
                     onClick={this.handleClickBtn}
@@ -31,22 +47,54 @@ class ToDoListWithRedux extends Component {
                     Add
                 </button>
                 <List/>
+                {
+                    this.state.modalVisible ?
+                        (
+                            <ModalWindow
+                                close={
+                                    () => this.setState(
+                                        {modalVisible:false}
+                                        )
+                                }
+                            >
+                                more 3 elements
+                            </ModalWindow>
+                        ): ''
+                }
             </div>
         )
     }
 }
 
 const mapStateToProps = state => ({
-
+    toDo: state.toDo
 })
-const mapActionToProps = dispatch => ({
+const mapActionToProps = dispatch =>({
     addElementToList (value) {
-        dispatch({type: 'ADD_ELEMENT', payload: value})
+        dispatch({type:'ADD_ELEMENT', payload: value})
     }
 })
-
 
 export default connect(
     mapStateToProps,
     mapActionToProps
 )(ToDoListWithRedux)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
