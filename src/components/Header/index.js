@@ -1,19 +1,79 @@
 import React, {Component} from 'react'
 import {Link} from 'react-router-dom'
+import { connect } from 'react-redux'
+import logo from '../../images/logo.png'
+
 import './styles.css'
 
 class Header extends Component {
+    state = {
+        visibleMenu: true,
+    }
+    changeMenuStatus = () => {
+        this.setState({
+            visibleMenu: !this.state.visibleMenu
+        })
+    }
     render () {
+        const {
+            auth,
+            firstName,
+            lastName,
+            logOut
+        } = this.props
+    const {
+        visibleMenu
+    } = this.state
         return (
             <header className="header">
-                this is header
-                <ul className="navList">
-                    <li><Link to="ToDo">To do list</Link></li>
-                    <li><Link to="/">Blog list</Link></li>
-                </ul>
+                {
+                    auth && (
+                    <div>
+                        {`${firstName} ${lastName}`}
+                    </div>
+                    )
+                }
+
+                <button
+                    className="btnTumbler"
+                    onClick={this.changeMenuStatus}
+                >
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </button>
+
+
+                {
+                    visibleMenu && (
+                        <ul className="navList">
+                            <li><Link to="/toDo">To do list</Link></li>
+                            <li><Link to="/">Blog list</Link></li>
+                            {
+                                !auth ? (
+                                    <li><Link to="/login">Login</Link></li>
+                                ) : (
+                                    <li onClick={logOut}>Logout</li>
+                                )
+                            }
+                        </ul>
+                    )
+                }
+                <img src={logo} className="header_Logo" alt="LOGO" />
             </header>
         )
     }
 }
 
-export default Header
+export default connect (
+    state => ({
+        auth: state.auth.auth,
+        firstName: state.auth.userName,
+        lastName: state.auth.userLastName
+    }),
+    dispatch => ({
+        logOut () {
+            dispatch({type: 'LOGOUT'})
+        }
+    })
+)(Header)

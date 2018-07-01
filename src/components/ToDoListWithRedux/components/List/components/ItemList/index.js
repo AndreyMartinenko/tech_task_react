@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
+import './style.css'
 
 class ItemList extends Component {
     state = {
@@ -22,7 +23,7 @@ class ItemList extends Component {
         const {data, DeleteElement} = this.props
         const {editTumbler} = this.state
         return (
-            <div>
+            <div className="list">
                 {
                     editTumbler
                         ? (
@@ -30,19 +31,21 @@ class ItemList extends Component {
                                 type="text"
                                 value={this.state.value}
                                 onChange={this.handleEditText}
+                                maxLength="20"
                             />
                         ) : data.name
                 }
                 {
                     !editTumbler
                         ? (
-                            <div>
-                                <button
+                            <div className="edit_delete">
+                                <button id="delete"
                                     onClick={() => DeleteElement(data.index)}
                                 >
                                     Delete
                                 </button>
                                 <button
+                                    id="edit"
                                     onClick={
                                         () => {
                                             this.setState({editTumbler: true})
@@ -54,7 +57,8 @@ class ItemList extends Component {
                             </div>
                         )
                         : (
-                            <button onClick={this.submitEditedValue}>
+                            <button id="submit"
+                                onClick={this.submitEditedValue}>
                                 Submit
                             </button>
                         )

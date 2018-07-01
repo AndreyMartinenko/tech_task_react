@@ -1,0 +1,15 @@
+.content {
+    display: inline-block;
+    margin-bottom: 50px;
+
+}
+
+.content>h3{
+color: #222222;
+}
+.content>p{
+    color: #222222;
+    text-shadow: darkblue 1px 1px;
+}
+.content>img{
+}

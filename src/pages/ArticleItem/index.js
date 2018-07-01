@@ -21,11 +21,11 @@ class ArticleItem extends Component {
     render () {
         const {data} = this.state
         return (
-                <div>
-                    <h1>article item</h1><br/>
-                    <img src={data['full_page_image']} alt=""/>
-                    <h1>{data['title']}</h1>
+                <div className="content">
+                    {/*<h2>article item</h2><br/>*/}
+                    <h3>{data['title']}</h3>
                     <p>{data['short_description']}</p>
+                    <img src={data['full_page_image']} alt=""/>
                 </div>
         )
     }

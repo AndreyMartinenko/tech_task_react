@@ -9,9 +9,31 @@
 }
 
 .inSide {
+    display: flex;
+    flex-direction: column;
     width: 400px;
     height: 300px;
     background: #ffffff;
     margin: 100px auto;
+    padding-top: 10px;
+    font-family: "Abyssinica SIL";
+    font-size: larger;
 
+}
+
+.inSide>img{
+    height: 250px;
+    width: 300px;
+    justify-content: space-around;
+    /*padding-left:50px;*/
+    margin-left: 50px;
+
+}
+.closeModWindow:hover{
+    color: darkblue;
+    transform: scale(1.2);
+
+}
+.closeModWindow{
+    margin-left: 250px;
 }

@@ -1,9 +1,13 @@
 .footer {
     height: 100px;
-    background: forestgreen;
-    margin-top: 30px;
-    padding-top: 20px;
-    margin-bottom: -0px;
+    margin-bottom: -100px;
+    background: dimgray;
+
 
 }
 
+
+.footer>p {
+    margin-top: 150px;
+    padding-top: 25px;
+}

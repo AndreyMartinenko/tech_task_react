@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import './style.css'
+import logoLMind from '../../images/logoLMind.png'
 
 class ModalWindow extends Component {
     onClick = (e) => {
@@ -18,6 +19,12 @@ class ModalWindow extends Component {
                         onClick={this.onClick}
                     >
                         {children}
+                        <img src={logoLMind} className="ModalLogo" alt=""/>
+                        <div className="closeModWindow"
+                             onClick={close}
+                        >
+                            Close =X=
+                        </div>
                     </div>
             </div>
         )

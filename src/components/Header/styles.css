@@ -1,8 +1,18 @@
 .header {
+    display: flex;
     min-height: 20px;
+    text-align: left;
     height: 100px;
     background: silver;
     margin-bottom: 30px;
+    justify-content: space-between;
+
+}
+
+.header>img {
+    margin-top: 5px;
+    height: 90px;
+    width: 140px;
 }
 
 .navList {
@@ -19,31 +29,42 @@
 .navList>li {
     margin: 0;
     padding: 0;
-     display: block;
-     height: 30px;
-     border-top: 1px solid black;
-     line-height: 30px;
-     list-style: none;
+    display: block;
+    height: 30px;
+    border-top: 1px solid black;
+    line-height: 30px;
+    list-style: none;
     color: white;
+    text-align: center;
  }
 
 .navList>li>a {
     color: white;
-    text-decoration: none;
+    text-decoration: black;
     }
+
+.btnTumbler>div {
+    display: flex;
+    width: 35px;
+    height: 3px;
+    background-color: black;
+    margin: 6px 0;
+
+}
 
 
 @media  screen and (min-width: 720px) {
-
-    /*somebutton*/
-
+    .btnTumbler {
+        display: none;
+    }
     .navList {
+        margin: auto;
         flex-direction: row;
-        background: none;
+        background: transparent;
         justify-content: flex-start;
     }
     .navList>li {
-        margin-right: 25px;
+        margin-right: 35px;
         border: none;
     }
 }

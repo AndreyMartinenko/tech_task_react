@@ -2,13 +2,18 @@ import BlogList from '../pages/BlogList'
 import ArticleItem from '../pages/ArticleItem'
 import ToDoWithRedux from '../components/ToDoListWithRedux'
 import NotFound from '../pages/404'
-
+import Login from '../pages/Auth/Login'
 
 export default [
     {
         path: '/',
         component: BlogList,
         exact: true
+    },
+    {
+        path: '/login',
+        component: Login,
+        exact: false
     },
     {
         path: '/toDo',

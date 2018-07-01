@@ -1,18 +1,15 @@
-/*div .ItemBlock>a {*/
-  /*color: yellow;*/
-  /*background: black;*/
-/*}*/
-
 .ListBlocks {
     display: flex;
-    justify-content: space-around;
+    flex-direction: row;
     flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 0 auto;
   }
 
 .ItemBlock {
   display: block;
   height: 200px;
-  margin-bottom: 25px;
+  margin-bottom: 15px;
   border: 1px solid blue;
 
   font-family: sans-serif;
@@ -21,7 +18,7 @@
   -webkit-box-shadow: -3px -3px 24px 0px rgba(0,0,0,0.56);
   -moz-box-shadow: -3px -3px 24px 0px rgba(0,0,0,0.56);
   box-shadow: -3px -3px 24px 0px rgba(0,0,0,0.56);
-  transition: all;
+  transition: 0.5s all;
 }
 
 .ItemBlock:hover {
@@ -38,6 +35,7 @@
   .ListBlocks {
     display: flex;
     flex-wrap: wrap;
+    width: 350px;
     margin: 0 auto;
     justify-content: space-around;
 
@@ -50,6 +48,17 @@
 @media screen and (min-width: 720px) {
   .ListBlocks {
     width: 700px;
+  }
+
+  .ItemBlock {
+    width: 300px;
+    height: 200px;
+  }
+}
+
+@media screen and (min-width: 1040px) {
+  .ListBlocks {
+    width: 1100px;
   }
 
   .ItemBlock {

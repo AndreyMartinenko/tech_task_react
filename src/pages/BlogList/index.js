@@ -40,8 +40,8 @@ class BlogList extends Component {
                                 className="ItemBlock"
                                 key={index}
                             >
-                                {item.title}
                                 <img src={item['title_images']['400']} alt=""/>
+                                {item.title}
                             </Link>
                         )
                     })

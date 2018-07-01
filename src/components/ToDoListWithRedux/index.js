@@ -4,11 +4,13 @@ import {connect} from 'react-redux'
 import List from './components/List'
 import ModalWindow from '../ModalWindow'
 
+import './style.css'
+
 
 class ToDoListWithRedux extends Component {
     state = {
         value: '',
-        modalVisible: true
+        modalVisible: false
     }
     componentWillReceiveProps (nextProps) {
         if (nextProps.toDo.length > 3) {
@@ -34,9 +36,11 @@ class ToDoListWithRedux extends Component {
     render () {
         const {value} = this.state
         return (
-            <div>
+            <div className="add">
+                <label className="label"><h3>Input few elements</h3></label>
                 <input
                     type="text"
+                    maxLength="15"
                     onChange={this.handleChangeValue}
                     value={value}
                     ref={elem => {this.elem = elem}}
@@ -57,9 +61,9 @@ class ToDoListWithRedux extends Component {
                                         )
                                 }
                             >
-                                more 3 elements
+                                You've inputted more than 3 elements
                             </ModalWindow>
-                        ): ''
+                        ) : ''
                 }
             </div>
         )
@@ -67,7 +71,8 @@ class ToDoListWithRedux extends Component {
 }
 
 const mapStateToProps = state => ({
-    toDo: state.toDo
+    toDo: state.toDo,
+    // login: state.login
 })
 const mapActionToProps = dispatch =>({
     addElementToList (value) {
