@@ -36,11 +36,13 @@
     list-style: none;
     color: white;
     text-align: center;
+    /*width: 100px;*/
  }
 
 .navList>li>a {
     color: white;
     text-decoration: black;
+    /*width: 70px;*/
     }
 
 .btnTumbler>div {
@@ -64,7 +66,7 @@
         justify-content: flex-start;
     }
     .navList>li {
-        margin-right: 35px;
+        margin-right: 50px;
         border: none;
     }
 }

@@ -2,6 +2,7 @@ import BlogList from '../pages/BlogList'
 import ArticleItem from '../pages/ArticleItem'
 import ToDoWithRedux from '../components/ToDoListWithRedux'
 import NotFound from '../pages/404'
+import MyPage from '../pages/myPage'
 import Login from '../pages/Auth/Login'
 
 export default [
@@ -28,6 +29,11 @@ export default [
     {
         path: '/article/:id',
         component: ArticleItem,
+        exact: false
+    },
+    {
+        path: '/about',
+        component: MyPage,
         exact: false
     },
     {

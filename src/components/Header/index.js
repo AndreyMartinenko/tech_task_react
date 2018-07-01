@@ -56,6 +56,7 @@ class Header extends Component {
                                     <li onClick={logOut}>Logout</li>
                                 )
                             }
+                            <li><Link to="/about">About Me</Link></li>
                         </ul>
                     )
                 }
