@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
+import photo from '../../images/me.jpg'
 
 import './style.css'
-import NotFound from "../404";
 
 class MyPage extends Component {
     render() {
@@ -9,16 +9,18 @@ class MyPage extends Component {
             <div
                 className="about"
             >
-                <h1>it's my page</h1>
-                <img src="" alt=""/>
-                <p>some text</p>
+                <img src={photo} className="myPhoto" alt="Photo"/>
+                <h3>Personal skills</h3>
+                <p>Good communications skills, good analytical skills, open-minded, proactive team player,
+                    goal-oriented, multitask, quick learner, attentive to details, with positive approach to the
+                    life</p>
             </div>
         )
 
     }
 }
-MyPage.propTypes = {};
 
+MyPage.propTypes = {};
 
 export default MyPage
 

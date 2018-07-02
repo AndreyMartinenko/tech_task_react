@@ -1,0 +1,23 @@
+.about{
+    background: darkgray;
+}
+.about>h3{
+    width: 400px;
+    margin-left: 150px;
+    background: dodgerblue;
+}
+
+.myPhoto {
+    width: 250px;
+    height: 250px;
+    margin-right: 600px;
+    border-radius: 200px;
+    border: 3px solid green;
+    box-shadow: 0 0 7px #666;
+}
+.about>p {
+
+    color: dimgrey;
+    background: greenyellow;
+    width: 700px;
+}
