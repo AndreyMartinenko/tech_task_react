@@ -1,9 +1,9 @@
 import React, {Component} from 'react'
 import {Link} from 'react-router-dom'
 import { connect } from 'react-redux'
-import {LOGOUT} from '../../store/actions/actionTypes.js'
 import logo from '../../images/logo.png'
 
+import {mapStateToProps, mapActionToProps}  from './redux.js'
 import './styles.css'
 
 class Header extends Component {
@@ -68,14 +68,6 @@ class Header extends Component {
 }
 
 export default connect (
-    state => ({
-        auth: state.auth.auth,
-        firstName: state.auth.userName,
-        lastName: state.auth.userLastName
-    }),
-    dispatch => ({
-        logOut () {
-            dispatch({type: LOGOUT})
-        }
-    })
+    mapStateToProps,
+    mapActionToProps
 )(Header)

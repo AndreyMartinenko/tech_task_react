@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import {connect} from 'react-redux'
 
 import List from './components/List'
-import {ADD_ELEMENT} from '../../store/actions/actionTypes.js'
+import {mapStateToProps, mapActionToProps } from './redux.js'
 import ModalWindow from '../ModalWindow'
 
 import './style.css'
@@ -70,16 +70,6 @@ class ToDoListWithRedux extends Component {
         )
     }
 }
-
-const mapStateToProps = state => ({
-    toDo: state.toDo,
-    // login: state.login
-})
-const mapActionToProps = dispatch =>({
-    addElementToList (value) {
-        dispatch({type:ADD_ELEMENT, payload: value})
-    }
-})
 
 export default connect(
     mapStateToProps,

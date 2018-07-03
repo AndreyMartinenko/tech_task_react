@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import { connect } from 'react-redux'
-import {AUTH} from '../../../store/actions/actionTypes.js'
+import {MapStateToProps, MapActionToProps} from './redux.js'
 
 import './style.css'
 
@@ -48,12 +48,7 @@ class Login extends Component {
         )
     }
 }
-const MapStateToProps = state => ({})
-const MapActionToProps = dispatch => ({
-    login (info) {
-        dispatch({type: AUTH, payload:info})
-    }
-})
+
 export default connect(
     MapStateToProps,
     MapActionToProps
