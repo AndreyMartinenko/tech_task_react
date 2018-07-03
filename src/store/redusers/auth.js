@@ -1,3 +1,5 @@
+import {AUTH, LOGOUT} from '../../store/actions/actionTypes.js'
+
 const initState = {
     auth: false,
     userName: '',
@@ -5,14 +7,14 @@ const initState = {
 }
 export default function auth (state = initState, action) {
     switch (action.type) {
-        case 'AUTH': {
+        case AUTH: {
             return {
                 auth: true,
                 userName: action.payload.firstName,
                 userLastName: action.payload.lastName
             }
         }
-        case 'LOGOUT': {
+        case LOGOUT: {
             return {
                 auth: false,
                 userName: '',

@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import {Link} from 'react-router-dom'
 import { connect } from 'react-redux'
+import {LOGOUT} from '../../store/actions/actionTypes.js'
 import logo from '../../images/logo.png'
 
 import './styles.css'
@@ -74,7 +75,7 @@ export default connect (
     }),
     dispatch => ({
         logOut () {
-            dispatch({type: 'LOGOUT'})
+            dispatch({type: LOGOUT})
         }
     })
 )(Header)
