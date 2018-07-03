@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
+import {DELETE_ELEMENT, EDIT_VALUE} from '../../../../../../store/actions/actionTypes.js'
 import './style.css'
 
 class ItemList extends Component {
@@ -31,7 +32,7 @@ class ItemList extends Component {
                                 type="text"
                                 value={this.state.value}
                                 onChange={this.handleEditText}
-                                maxLength="20"
+                                maxLength="17"
                             />
                         ) : data.name
                 }
@@ -71,11 +72,11 @@ class ItemList extends Component {
 const mapStateToProps = state => ({})
 const mapActionToProps = dispatch => ({
     DeleteElement (index) {
-        dispatch({type: 'DELETE_ELEMENT', payload: index})
+        dispatch({type: DELETE_ELEMENT, payload: index})
     },
     EditValue (value, index) {
         dispatch({
-            type: 'EDIT_VALUE',
+            type: EDIT_VALUE,
             payload: {index, value}
         })
     }

@@ -9,7 +9,7 @@ class MyPage extends Component {
             <div
                 className="about"
             >
-                <img src={photo} className="myPhoto" alt="Photo"/>
+                <img src={photo} className="myPhoto" alt="myFace"/>
                 <h3>Personal skills</h3>
                 <p>Good communications skills, good analytical skills, open-minded, proactive team player,
                     goal-oriented, multitask, quick learner, attentive to details, with positive approach to the

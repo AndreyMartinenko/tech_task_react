@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import {connect} from 'react-redux'
 
 import List from './components/List'
+import {ADD_ELEMENT} from '../../store/actions/actionTypes.js'
 import ModalWindow from '../ModalWindow'
 
 import './style.css'
@@ -76,7 +77,7 @@ const mapStateToProps = state => ({
 })
 const mapActionToProps = dispatch =>({
     addElementToList (value) {
-        dispatch({type:'ADD_ELEMENT', payload: value})
+        dispatch({type:ADD_ELEMENT, payload: value})
     }
 })
 
