@@ -13,8 +13,8 @@ class ToDoListWithRedux extends Component {
         value: '',
         modalVisible: false
     }
-    componentWillReceiveProps (nextProps) {
-        if (nextProps.toDo.length > 3) {
+    componentWillReceiveProps ({toDo}) {
+        if (toDo.length > 3) {
             this.setState({modalVisible: true})
         }
     }

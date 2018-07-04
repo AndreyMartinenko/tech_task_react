@@ -1,23 +1,56 @@
 .about{
-    background: darkgray;
+    margin-left: 34%;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    color: #222222;
+    background: url(../../images/me.jpg);
+    position: relative;
+    content: '';
+    margin-bottom: 250px;
+    border: 10px solid tan;
 }
-.about>h3{
-    width: 400px;
-    margin-left: 150px;
-    background: dodgerblue;
+.about::after{
+    padding-top: 100px;
+    content: '';
+    display: block;
+    background: tan;
+    position: absolute;
+    width: 10px;
+    height: 0;
+    bottom: -100px;
+    left: 50%;
+    margin-left: -5px;
+}
+.about>p{
+    position: absolute;
+    margin-top: 300px;
+    background: burlywood;
+    width: 650px;
+    height: 100px;
+    left: -110%;
+    margin-bottom: 100px;
+    font-size: larger;
 }
 
-.myPhoto {
-    width: 250px;
-    height: 250px;
-    margin-right: 600px;
-    border-radius: 200px;
-    border: 3px solid green;
-    box-shadow: 0 0 7px #666;
-}
-.about>p {
-
-    color: dimgrey;
-    background: greenyellow;
-    width: 700px;
+@media screen and (max-width: 635px) {
+    .about{
+        margin-left: 22%;
+        border: 5px solid tan;
+        margin-bottom: 150px;
+    }
+    .about::after{
+        padding-top: 50px;
+        width: 5px;
+        bottom: -50px;
+        height: 0;
+    }
+    .about>p{
+        height: 90px;
+        width: 420px;
+        font-style: normal;
+        font-size: medium;
+        left: -50%;
+        margin-top: 250px;
+    }
 }

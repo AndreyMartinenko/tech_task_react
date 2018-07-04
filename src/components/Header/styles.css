@@ -2,7 +2,7 @@
     display: flex;
     min-height: 20px;
     text-align: left;
-    height: 100px;
+    height: 104px;
     background: silver;
     margin-bottom: 30px;
     justify-content: space-between;
@@ -22,7 +22,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    width: 450px;
+    width: 430px;
 }
 
 
@@ -32,17 +32,15 @@
     display: block;
     height: 20px;
     border-top: 1px solid black;
-    line-height: 22px;
+    line-height: 20px;
     list-style: none;
     color: white;
     text-align: center;
-    /*width: 100px;*/
  }
 
 .navList>li>a {
     color: white;
     text-decoration: black;
-    /*width: 70px;*/
     }
 
 .btnTumbler>div {
