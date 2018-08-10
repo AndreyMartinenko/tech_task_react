@@ -1,8 +1,22 @@
 export const articleItem = (id) => {
     return fetch(
-        `https://codeguida.com/api/v1/posts/${id}/?fields=author_detailed&fields=serie_posts&fields=related_posts&fields=reading_time_word&fields=reading_time_word&fields=edit_url&fields=partner&fields=authorshi`,
+        `https://api.imgur.com/3/gallery/album/${id}`,
         {
-            method: 'GET'
+            method: 'GET',
+            headers: {
+                'Authorization':'Client-ID 36bb556abe69ccd'
+            }
+        }
+    )
+}
+export const commentsFetcher = (id) => {
+    return fetch(
+        `https://api.imgur.com/3/gallery/album/${id}/comments/`,
+        {
+            method: 'GET',
+            headers: {
+                'Authorization':'Client-ID 36bb556abe69ccd'
+            }
         }
     )
 }

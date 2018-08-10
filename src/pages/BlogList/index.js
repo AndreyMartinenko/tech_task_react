@@ -14,15 +14,18 @@ class BlogList extends Component {
     }
 
     componentDidMount () {
-        fetch ('https://codeguida.com/api/v1/posts/?category=programming&o=-moderated_at&limit=24',
+        fetch (`https://api.imgur.com/3/gallery/hot/viral/0.json`,
             {
-                method: 'GET'
+                method: 'GET',
+                headers: {
+                    'Authorization':'Client-ID 36bb556abe69ccd'
+                }
             }).then(res => {
             return res.json()
         }).then(response => {
             console.log(response)
             this.setState({
-                data: response.results,
+                data: response.data,
                 activeLoader: false
             })
         })
@@ -34,13 +37,15 @@ class BlogList extends Component {
                 {this.state.activeLoader && <Loader/>}
                 {
                     data.map((item, index) => {
+                        console.log(item)
+                        item['images'] = item['images'] || [{link:"none.png"}]
                         return (
                             <Link
                                 to={`/article/${item.id}`}
                                 className="ItemBlock"
                                 key={index}
                             >
-                                <img src={item['title_images']['400']} alt=""/>
+                                <img src={item['images'][0]['link']} alt=""/>
                                 {item.title}
                             </Link>
                         )

@@ -1,9 +1,7 @@
 import React, {Component} from 'react'
 import {Link} from 'react-router-dom'
-import { connect } from 'react-redux'
 import logo from '../../images/logo.png'
 
-import {mapStateToProps, mapActionToProps}  from './redux.js'
 import './styles.css'
 
 class Header extends Component {
@@ -16,25 +14,12 @@ class Header extends Component {
         })
     }
     render () {
-        const {
-            auth,
-            firstName,
-            lastName,
-            logOut
-        } = this.props
+
     const {
         visibleMenu
     } = this.state
         return (
             <header className="header">
-                {
-                    auth && (
-                    <div>
-                        {`${firstName} ${lastName}`}
-                    </div>
-                    )
-                }
-
                 <button
                     className="btnTumbler"
                     onClick={this.changeMenuStatus}
@@ -44,20 +29,12 @@ class Header extends Component {
                     <div></div>
                 </button>
 
-
                 {
                     visibleMenu && (
                         <ul className="navList">
-                            <li><Link to="/toDo">To do list</Link></li>
-                            <li><Link to="/">Blog list</Link></li>
-                            {
-                                !auth ? (
-                                    <li><Link to="/login">Login</Link></li>
-                                ) : (
-                                    <li onClick={logOut}>Logout</li>
-                                )
-                            }
-                            <li><Link to="/about">About Me</Link></li>
+                            <li><Link to="/galery">Galery</Link></li>
+                            <li><Link to="/">Posts List</Link></li>
+                            <li><Link to="/upload">Upload</Link></li>
                         </ul>
                     )
                 }
@@ -66,8 +43,4 @@ class Header extends Component {
         )
     }
 }
-
-export default connect (
-    mapStateToProps,
-    mapActionToProps
-)(Header)
+export default Header
